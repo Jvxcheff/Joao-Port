@@ -1,7 +1,7 @@
 /* ==========================================================================
    Portfólio — João Victor
    Estrutura deste arquivo:
-   1. Tokens (cores, tipografia, espaçamento)
+   1. (cores, tipografia, espaçamento)
    2. Reset e base
    3. Layout (container, seções)
    4. Cabeçalho e rodapé
@@ -11,7 +11,7 @@
    8. Acessibilidade e movimento
    ========================================================================== */
 
-/* 1. Tokens ---------------------------------------------------------------
+/* 1. ---------------------------------------------------------------
    Todas as decisões visuais ficam aqui. Para mudar a cor de destaque do site
    inteiro, basta trocar --accent. */
 :root {
