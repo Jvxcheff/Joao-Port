@@ -1,99 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projetos de João Victor - Portfólio de Desenvolvimento de Sistemas">
-    <title>Meus Projetos - João Victor</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="projetos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos — João Victor</title>
+  <meta name="description" content="Projetos públicos de João Victor: FlipPrime, JacyLash e Alura Plus. Sites e sistemas web feitos com HTML, CSS, JavaScript e React.">
+  <meta name="theme-color" content="#fafafb">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f2328'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='16' font-weight='600' text-anchor='middle' fill='white'%3EJV%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav aria-label="Menu principal">
-        <ul>
-            <li>
-                <a href="index.html">Sobre mim</a>
-            </li>
-            <li>
-                <a href="projetos.html">Projetos</a>
-            </li>
-            <li>
-                <a href="index.html#contact">Contato</a>
-            </li>
-        </ul>
-    </nav>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-    <header>
-        <h1>Meus Projetos</h1>
-        <p class="tagline">Conheça os projetos web que eu desenvolvi.</p>
-    </header>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">João Victor</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="projetos.html" aria-current="page">Projetos</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section class="projects-section">
-            <div class="projects-grid">
-                <!-- PROJETO 1 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <h2>JacyLash Curso</h2>
-                        <span class="project-category">Front-End</span>
-                    </div>
-                    <p class="project-description">
-                        JacyLash é um site de curso de cilíos, desenvolvimento web. Site feito para minha primeira cliente.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://jacylash.vercel.app/" class="btn-project" target="_blank">Ver JacyLash</a>
-                    </div>
-                </article>
+  <main id="conteudo">
+    <div class="container">
+      <div class="page-head">
+        <h1 class="page-head__title">Projetos</h1>
+        <p class="page-head__lead">
+          Sites e sistemas que construí, do primeiro trabalho para cliente a um sistema em produção.
+        </p>
+      </div>
+    </div>
 
-                <!-- PROJETO 2 -->
-                <article class="project-card">
-                    <div class="project-header">
-                        <h2>Alura-Plus</h2>
-                        <span class="project-category">Front-End</span>
-                    </div>
-                    <p class="project-description">
-                        Alura-Plus é uma landing page de cursos, desenvolvimento web. Feito em um mini curso da Alura, onde o objetivo era criar uma landing page de cursos utilizando HTML, CSS e JavaScript.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://alura-plus-virid-nine.vercel.app/" class="btn-project" target="_blank">Ver Alura-Plus</a>
-                    </div>
-                </article>
+    <section class="section" style="padding-top: var(--space-3)" aria-label="Lista de projetos">
+      <div class="container">
+        <div class="projects projects--list">
+
+          <article class="card">
+            <div class="card__media" data-label="flipprime.vercel.app">
+              <img src="assets/projetos/flipprime.png" width="1440" height="900" loading="lazy"
+                   alt="Captura de tela da página inicial do FlipPrime">
             </div>
+            <div class="card__body">
+              <p class="card__kind">Sistema web · em produção</p>
+              <h2 class="card__title">FlipPrime</h2>
+              <p class="card__text">
+                Sistema para gestão de revenda de produtos, em uma plataforma única que atende
+                vários negócios.
+              </p>
+              <ul class="tags" aria-label="Tecnologias">
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Vite</li>
+                <li>Tailwind CSS</li>
+              </ul>
+              <a class="card__link text-link" href="https://flipprime.vercel.app/" target="_blank" rel="noopener noreferrer">Ver FlipPrime</a>
+            </div>
+          </article>
 
-            <!-- PROJETO 3-->
-             <article class="project-card">
-                <div class="project-header">
-                    <h2>FlipPrime</h2>
-                    <span class="project-category">React, TypeScript, Vite TailwindCSS</span>
-                </div>
-                <p class="project-description">
-                   FlipPrime é um SaaS Full-Stack multi-tenant para gestão de revenda de produtos, em produção.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">JavaScript</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://flipprime.vercel.app/" class="btn-project" target="_blank">Ver FlipPrime</a>
-                </div>
-        </section>
-    </main>
+          <article class="card">
+            <div class="card__media" data-label="jacylash.vercel.app">
+              <img src="assets/projetos/jacylash.png" width="1440" height="900" loading="lazy"
+                   alt="Captura de tela do site JacyLash">
+            </div>
+            <div class="card__body">
+              <p class="card__kind">Site para cliente</p>
+              <h2 class="card__title">JacyLash</h2>
+              <p class="card__text">
+                Site de divulgação de um curso de cílios, feito para minha primeira cliente.
+              </p>
+              <ul class="tags" aria-label="Tecnologias">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+              </ul>
+              <a class="card__link text-link" href="https://jacylash.vercel.app/" target="_blank" rel="noopener noreferrer">Ver JacyLash</a>
+            </div>
+          </article>
 
-    <footer>
-        <p>&copy; 2026 João Victor. Todos os direitos reservados.</p>
-    </footer>
+          <article class="card">
+            <div class="card__media" data-label="alura-plus-virid-nine.vercel.app">
+              <img src="assets/projetos/alura-plus.png" width="1440" height="900" loading="lazy"
+                   alt="Captura de tela da landing page Alura Plus">
+            </div>
+            <div class="card__body">
+              <p class="card__kind">Prática de curso</p>
+              <h2 class="card__title">Alura Plus</h2>
+              <p class="card__text">
+                Landing page de cursos criada em um mini curso da Alura, para praticar a estrutura
+                de uma página com HTML, CSS e JavaScript.
+              </p>
+              <ul class="tags" aria-label="Tecnologias">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+              </ul>
+              <a class="card__link text-link" href="https://alura-plus-virid-nine.vercel.app/" target="_blank" rel="noopener noreferrer">Ver Alura Plus</a>
+            </div>
+          </article>
 
-    <script src="logic.js"></script>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span data-year>2026</span> João Victor</div>
+  </footer>
+
+  <script src="logic.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,488 @@
+/* ==========================================================================
+   Portfólio — João Victor
+   Estrutura deste arquivo:
+   1. Tokens (cores, tipografia, espaçamento)
+   2. Reset e base
+   3. Layout (container, seções)
+   4. Cabeçalho e rodapé
+   5. Hero
+   6. Cards de projeto
+   7. Sobre e contato
+   8. Acessibilidade e movimento
+   ========================================================================== */
+
+/* 1. Tokens ---------------------------------------------------------------
+   Todas as decisões visuais ficam aqui. Para mudar a cor de destaque do site
+   inteiro, basta trocar --accent. */
+:root {
+  --bg: #fafafb;
+  --surface: #ffffff;
+  --text: #1f2328;        /* grafite */
+  --muted: #5b6370;       /* texto secundário */
+  --line: #e4e6eb;        /* bordas sutis */
+  --accent: #2f5fd0;      /* azul discreto */
+  --accent-soft: #eef2fc;
+
+  --font: "Geist", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+
+  --container: 68rem;
+  --measure: 38rem;       /* largura máxima de texto corrido (~62 caracteres) */
+}
+
+/* 2. Reset e base --------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+/* 3. Layout --------------------------------------------------------------- */
+.container {
+  width: min(100% - 2.5rem, var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--space-5);
+}
+
+.section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.section__title {
+  font-size: 1.5rem;
+}
+
+.text-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+/* 4. Cabeçalho e rodapé --------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgb(250 250 251 / 0.88);
+  backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-height: 4rem;
+}
+
+.brand {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  padding-block: 0.25rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: var(--space-4);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* 5. Hero ----------------------------------------------------------------- */
+.hero {
+  padding-block: var(--space-6) var(--space-5);
+}
+
+.hero__role {
+  color: var(--muted);
+  margin-bottom: var(--space-2);
+}
+
+.hero__title {
+  max-width: 16ch;
+  font-size: clamp(2.5rem, 6.5vw, 4.25rem);
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+}
+
+.hero__lead {
+  max-width: var(--measure);
+  margin-top: var(--space-3);
+  color: var(--muted);
+  font-size: 1.1875rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: var(--space-4);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.hero__status::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Botão principal */
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-sm);
+  background: var(--text);
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.button:hover {
+  background: var(--accent);
+}
+
+/* Única animação automática do site: a entrada do hero, uma vez. */
+.hero > .container > * {
+  animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.hero > .container > :nth-child(2) { animation-delay: 0.06s; }
+.hero > .container > :nth-child(3) { animation-delay: 0.12s; }
+.hero > .container > :nth-child(4) { animation-delay: 0.18s; }
+.hero > .container > :nth-child(5) { animation-delay: 0.24s; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* 6. Cards de projeto ----------------------------------------------------- */
+.projects {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.projects--grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: #c5cad6;
+}
+
+.card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Quando a imagem ainda não existe, mostramos o endereço do site. */
+.card__media.is-missing img {
+  display: none;
+}
+
+.card__media.is-missing::after {
+  content: attr(data-label);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-size: 0.9375rem;
+}
+
+.card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+}
+
+.card__kind {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.card__title {
+  font-size: 1.25rem;
+}
+
+.card__text {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: var(--space-1);
+}
+
+.tags li {
+  padding: 0.15rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.card__link {
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+/* Variação horizontal usada na página de projetos */
+@media (min-width: 52rem) {
+  .projects--list .card {
+    flex-direction: row;
+  }
+
+  .projects--list .card__media {
+    flex: 0 0 55%;
+    aspect-ratio: auto;
+    min-height: 18rem;
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+  }
+
+  .projects--list .card__body {
+    justify-content: center;
+    padding: var(--space-4);
+  }
+}
+
+/* 7. Páginas internas, sobre e contato ------------------------------------ */
+.page-head {
+  padding-block: var(--space-5) var(--space-3);
+}
+
+.page-head__title {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  letter-spacing: -0.03em;
+}
+
+.page-head__lead {
+  max-width: var(--measure);
+  margin-top: var(--space-2);
+  color: var(--muted);
+  font-size: 1.1875rem;
+}
+
+.split {
+  display: grid;
+  gap: var(--space-3) var(--space-5);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 52rem) {
+  .split {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.prose {
+  max-width: var(--measure);
+  color: var(--muted);
+}
+
+.prose p + p {
+  margin-top: var(--space-2);
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  max-width: var(--measure);
+}
+
+.facts dt {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.facts dd {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+}
+
+.contact-list {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: var(--space-3);
+}
+
+.contact-list a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+/* 8. Acessibilidade e movimento ------------------------------------------- */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.6rem 1rem;
+  background: var(--text);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  z-index: 20;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (max-width: 30rem) {
+  .section { padding-block: var(--space-4); }
+  .hero { padding-block: var(--space-5) var(--space-4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
