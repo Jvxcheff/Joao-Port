@@ -280,7 +280,7 @@ a {
 
 .card__media {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 12 / 6;
   background: var(--accent-soft);
   border-bottom: 1px solid var(--line);
   overflow: hidden;
@@ -358,9 +358,9 @@ a {
   }
 
   .projects--list .card__media {
-    flex: 0 0 55%;
+    flex: 0 0 45%;
     aspect-ratio: auto;
-    min-height: 18rem;
+    min-height: 14rem;
     border-bottom: 0;
     border-right: 1px solid var(--line);
   }
